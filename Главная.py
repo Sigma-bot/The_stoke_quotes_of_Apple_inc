@@ -27,8 +27,8 @@ with tabs[0]:
 
     st.write(tickerDf.head(5))
     fig,ax=plt.subplots(figsize=(10,10))
-    # ax.plot(tickerDf['Index'],tickerDf['Close'])
-    # st.pyplot(fig)
+    ax.plot(tickerDf['Date'],tickerDf['Close'])
+    st.pyplot(fig)
 
 with tabs[1]:
     tickerSymbol="AAPL"
