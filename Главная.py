@@ -26,6 +26,7 @@ with tabs[0]:
     st.line_chart(tickerDf['Volume'])
 
     st.write(tickerDf.head(5))
+    st.write(tickerDf.columns)
     # fig,ax=plt.subplots(figsize=(10,10))
     # ax.plot(tickerDf['Date'],tickerDf['Close'])
     # st.pyplot(fig)
