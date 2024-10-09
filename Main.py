@@ -2,9 +2,9 @@ import yfinance as yf
 import streamlit as st
 import pandas as pd
 import datetime 
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
-tabs = st.tabs(["Главная", "О компании 'Яблоко'"])
+tabs = st.sidebar.tabs(["Главная", "О компании 'Яблоко'"])
 
 with tabs[0]:
     st.title("Элементарное приложение для оценки акций Apple")
