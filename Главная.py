@@ -38,9 +38,16 @@ with tabs[0]:
     ax.legend()
     for spine in ax.spines.values():
         spine.set_visible(False)
-        ax.yaxis.grid(True)
-    st.pyplot(fig)
-    st.sidebar.download_button("Download binary file", fig)
+    ax.yaxis.grid(True)
+    file_path = "graph.png"
+    fig.savefig(file_path)
+    plt.close(fig)  # Закрыть фигуру, чтобы избежать отображения
+
+# Отображение графика в Streamlit
+    st.image(file_path)
+
+# Кнопка для загрузки графика
+    st.sidebar.download_button("Download graph as PNG", file_path, "graph.png", "image/png")
 
     fig,ax=plt.subplots(figsize=(20,10))
     ax.plot(new_df['Date'], new_df['Volume'], label='Цена закрытия')
