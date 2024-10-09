@@ -39,7 +39,7 @@ with tabs[0]:
     for spine in ax.spines.values():
         spine.set_visible(False)
         ax.yaxis.grid(True)
-        st.pyplot(fig)
+    st.pyplot(fig)
     st.sidebar.download_button("Download binary file", fig)
 
     fig,ax=plt.subplots(figsize=(20,10))
@@ -51,7 +51,7 @@ with tabs[0]:
     for spine in ax.spines.values():
         spine.set_visible(False)
         ax.yaxis.grid(True)
-        st.pyplot(fig)
+    st.pyplot(fig)
     # st.download_button("Download binary file", binary_contents)
 
 with tabs[1]:
