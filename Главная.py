@@ -32,8 +32,11 @@ with tabs[0]:
     new_df=tickerDf.reset_index()
     if 'Close' in new_df and 'Volume' in new_df and 'Date' in new_df:
             fig,ax=plt.subplots(figsize=(20,10))
-            ax.plot(new_df['Date'],new_df['Close'])
-            st.pyplot(fig)
+            ax.plot(tickerDf['Date'], tickerDf['Close'], label='Цена закрытия')
+            ax.set_xlabel('Дата')
+            ax.set_ylabel('Цена')
+            ax.set_title('График цен закрытия')
+            ax.legend()
         # st.line_chart(new_df['Volume'])
     else:
         st.error("Отсутствуют необходимые данные в DataFrame.")
