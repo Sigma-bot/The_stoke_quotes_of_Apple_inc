@@ -25,7 +25,7 @@ with tabs[0]:
     st.write("## График объема торгов")
     st.line_chart(tickerDf['Volume'])
 
-    st.write(tickerDf.head(5))
+    # st.write(tickerDf.head(5))
     # fig,ax=plt.subplots(figsize=(100,100))
     # ax.plot(tickerDf['Index'],tickerDf['Close'])
     # st.pyplot(fig)
