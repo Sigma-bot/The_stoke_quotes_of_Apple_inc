@@ -31,7 +31,7 @@ with tabs[0]:
 
     new_df=tickerDf.reset_index()
     if 'Close' in new_df and 'Volume' in new_df and 'Date' in new_df:
-            fig,ax=plt.subplots(figsize=(10,10))
+            fig,ax=plt.subplots(figsize=(20,10))
             ax.plot(new_df['Date'],new_df['Close'])
             st.pyplot(fig)
         # st.line_chart(new_df['Volume'])
