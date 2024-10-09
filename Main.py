@@ -25,9 +25,10 @@ with tabs[0]:
     st.write("## График объема торгов")
     st.line_chart(tickerDf['Volume'])
 
-    fig,ax=plt.subplots(figsize=(100,100))
-    ax.plot(tickerDf['Index'],tickerDf['Close'])
-    st.pyplot(fig)
+    st.write(tickerDf.head(5))
+    # fig,ax=plt.subplots(figsize=(100,100))
+    # ax.plot(tickerDf['Index'],tickerDf['Close'])
+    # st.pyplot(fig)
 
 with tabs[1]:
     tickerSymbol="AAPL"
