@@ -26,9 +26,15 @@ with tabs[0]:
     st.line_chart(tickerDf['Volume'])
 
     st.write(tickerDf.head(5))
-    fig,ax=plt.subplots(figsize=(10,10))
-    ax.plot(tickerDf['Date'],tickerDf['Close'])
-    st.pyplot(fig)
+    # fig,ax=plt.subplots(figsize=(10,10))
+    # ax.plot(tickerDf['Date'],tickerDf['Close'])
+    # st.pyplot(fig)
+
+    if 'Close' in tickerDf and 'Volume' in tickerDf and 'Date' in tickerDf:
+        st.line_chart(tickerDf['Close'])
+        st.line_chart(tickerDf['Volume'])
+    else:
+        st.error("Отсутствуют необходимые данные в DataFrame.")
 
 with tabs[1]:
     tickerSymbol="AAPL"
