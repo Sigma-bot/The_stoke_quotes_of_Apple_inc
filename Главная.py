@@ -27,6 +27,7 @@ with tabs[0]:
 
     st.write(tickerDf.head(5))
     st.write(tickerDf.columns)
+    st.write(tickerDf.reset_index().columns)
     # fig,ax=plt.subplots(figsize=(10,10))
     # ax.plot(tickerDf['Date'],tickerDf['Close'])
     # st.pyplot(fig)
