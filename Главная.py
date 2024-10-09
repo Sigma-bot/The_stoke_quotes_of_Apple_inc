@@ -2,7 +2,7 @@ import yfinance as yf
 import streamlit as st
 import pandas as pd
 import datetime 
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 tabs = st.tabs(["Главная", "О компании 'Яблоко'"])
 
@@ -25,8 +25,8 @@ with tabs[0]:
     st.write("## График объема торгов")
     st.line_chart(tickerDf['Volume'])
 
-    # st.write(tickerDf.head(5))
-    # fig,ax=plt.subplots(figsize=(100,100))
+    st.write(tickerDf.head(5))
+    fig,ax=plt.subplots(figsize=(10,10))
     # ax.plot(tickerDf['Index'],tickerDf['Close'])
     # st.pyplot(fig)
 
