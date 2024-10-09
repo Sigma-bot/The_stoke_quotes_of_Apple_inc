@@ -37,6 +37,10 @@ with tabs[0]:
             ax.set_ylabel('Цена')
             ax.set_title('График цен закрытия')
             ax.legend()
+            for spine in ax.spines.values():
+                spine.set_visible(False)
+            ax.yaxis.grid(True)
+            st.pyplot(fig)
         # st.line_chart(new_df['Volume'])
     else:
         st.error("Отсутствуют необходимые данные в DataFrame.")
