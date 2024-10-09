@@ -30,20 +30,29 @@ with tabs[0]:
     # st.write(tickerDf.reset_index().columns)
 
     new_df=tickerDf.reset_index()
-    if 'Close' in new_df and 'Volume' in new_df and 'Date' in new_df:
-            fig,ax=plt.subplots(figsize=(20,10))
-            ax.plot(new_df['Date'], new_df['Close'], label='Цена закрытия')
-            ax.set_xlabel('Дата')
-            ax.set_ylabel('Цена')
-            ax.set_title('График цен закрытия')
-            ax.legend()
-            for spine in ax.spines.values():
-                spine.set_visible(False)
-            ax.yaxis.grid(True)
-            st.pyplot(fig)
-        # st.line_chart(new_df['Volume'])
-    else:
-        st.error("Отсутствуют необходимые данные в DataFrame.")
+    fig,ax=plt.subplots(figsize=(20,10))
+    ax.plot(new_df['Date'], new_df['Close'], label='Цена закрытия')
+    ax.set_xlabel('Дата')
+    ax.set_ylabel('Цена')
+    ax.set_title('График цен закрытия')
+    ax.legend()
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+        ax.yaxis.grid(True)
+        st.pyplot(fig)
+    st.sidebar.download_button("Download binary file", fig)
+
+    fig,ax=plt.subplots(figsize=(20,10))
+    ax.plot(new_df['Date'], new_df['Volume'], label='Цена закрытия')
+    ax.set_xlabel('Дата')
+    ax.set_ylabel('Цена')
+    ax.set_title('График объема торгов')
+    ax.legend()
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+        ax.yaxis.grid(True)
+        st.pyplot(fig)
+    # st.download_button("Download binary file", binary_contents)
 
 with tabs[1]:
     tickerSymbol="AAPL"
