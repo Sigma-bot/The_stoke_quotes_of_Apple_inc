@@ -25,16 +25,16 @@ with tabs[0]:
     st.write("## График объема торгов")
     st.line_chart(tickerDf['Volume'])
 
-    st.write(tickerDf.head(5))
-    st.write(tickerDf.columns)
-    st.write(tickerDf.reset_index().columns)
+    # st.write(tickerDf.head(5))
+    # st.write(tickerDf.columns)
+    # st.write(tickerDf.reset_index().columns)
     # fig,ax=plt.subplots(figsize=(10,10))
     # ax.plot(tickerDf['Date'],tickerDf['Close'])
     # st.pyplot(fig)
-
-    if 'Close' in tickerDf and 'Volume' in tickerDf and 'Date' in tickerDf:
-        st.line_chart(tickerDf['Close'])
-        st.line_chart(tickerDf['Volume'])
+    new_df=tickerDf.reset_index()
+    if 'Close' in new_df and 'Volume' in new_df and 'Date' in new_df:
+        st.line_chart(new_df['Close'])
+        st.line_chart(new_df['Volume'])
     else:
         st.error("Отсутствуют необходимые данные в DataFrame.")
 
